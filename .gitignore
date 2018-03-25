@@ -2,3 +2,6 @@ pyCollaborativeFiltering
 Movielens-Recommender
 movie-lens-10M
 movie-lens-smallest
+ml-clustering-recommender/.env
+ml-clustering-recommender/.ipynb_checkpoints
+ml-clustering-recommender/__pycache__

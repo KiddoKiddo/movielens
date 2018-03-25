@@ -93,6 +93,7 @@ class UserBased(CollaborativeFiltering):
         print("\tComplete!")
         return model
     
+    # Format of nearestNeighbors: {userID: similarity, ...}
     def getPredictedRating(self, user, item, nearestNeighbors):
         if self.dataType == DataType.Unary:
             if item in self.prefs[user]:
@@ -133,6 +134,7 @@ class UserBased(CollaborativeFiltering):
                 if similarity <= 0:
                     break
                 nearestNeighbors[neighbor] = similarity
+                #  To get all items which neighbors have rated 
                 for item in self.prefs[neighbor]:
                     candidateItems[item] = None
             predictedScores = [(self.getPredictedRating(user, item, nearestNeighbors), item)
